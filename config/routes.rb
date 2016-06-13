@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   #Welcome is name of start page
-  get 'welcome' => 'pages#home'
+  get '' => 'pages#home'
   get 'player' => 'pages#player'
   get 'hello' => 'pages#hello'
 
