@@ -8,11 +8,13 @@
 
   /* General */
 html, body {
+  margin: 0px; padding: 0px; border: 0px;
   height: 100%;
-  margin: 0;
 }
 
 body {
+  margin:0;
+  padding:0;
   background-image: url('http://s3.a
 mazonaws.com/codecademy-content/cour
 ses/learn-rails/img/bg-static.jpg');
@@ -22,11 +24,12 @@ ses/learn-rails/img/bg-static.jpg');
 }
 
 .container {
-  margin: 0 auto;
+  margin: 0px; padding: 0px; border: 0px;
   width: 80%;
 }
+
 div.main {
-  transition: all 0.5s ease;
+  margin: 0px; padding: 0px; border: 0px;
   float:left;
   width: 60%;
   background-color: black;
@@ -34,13 +37,14 @@ div.main {
 
 /* Main */
 .main {
+  margin: 0px; padding: 0px; border: 0px;
   color: #fff;
   position: relative;
-  top: 100px;
   text-align: center;
 }
 
 .main h1 {
-  font-size: 80px;
+  margin: 0px; padding: 0px; border: 0px;
+  font-size: 400%;
   font-weight: 300;
 }
