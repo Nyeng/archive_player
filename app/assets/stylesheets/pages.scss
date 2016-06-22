@@ -15,11 +15,15 @@ html, body {
 body {
   margin:0;
   padding:0;
-  background-image: url('http://s3.a
-mazonaws.com/codecademy-content/cour
-ses/learn-rails/img/bg-static.jpg');
+  //background-image: url('http://s3.a
+//mazonaws.com/codecademy-content/cour
+//ses/learn-rails/img/bg-static.jpg');
+  background-image: url('https://s-media-cache-ak0.pinimg.com/736x/bf/30/bd/bf30bd0873a0e514c454e6c11f124596.jpg');
+  // https://s-media-cache-ak0.pinimg.com/736x/bf/30/bd/bf30bd0873a0e514c454e6c11f124596.jpg
+  //background-image: url('../images/airbnbbg.jpg');
   background-repeat: repeat-y;
-  background-size: cover;
+  //background-size: cover;
+  background-size: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -28,17 +32,18 @@ ses/learn-rails/img/bg-static.jpg');
   width: 80%;
 }
 
-div.content {
+div#content {
   margin: 0px; padding: 0px; border: 0px;
   float:left;
-  width: 60%;
-  background-color: black;
+  width: 75%;
+  background-color: #fff;
+  border-right: 2px red;
 }
 
 /* Main */
 .main {
   margin: 0px; padding: 0px; border: 0px;
-  color: #fff;
+  color: #483C32;
   position: relative;
   text-align: center;
 }
