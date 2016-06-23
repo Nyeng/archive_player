@@ -39,6 +39,7 @@ div#content {
   width: 85%;
   background-color: #fff;
   border-right: 2px red;
+  padding-left: 2%;
 }
 
 /* Main */
@@ -46,7 +47,8 @@ div#content {
   margin: 0px; padding: 0px; border: 0px;
   color: #483C32;
   position: relative;
-  text-align: center;
+  text-align: left;
+  padding-left: 2%;
 }
 
 .main h1 {
