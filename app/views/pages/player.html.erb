@@ -1,40 +1,81 @@
 <div class="main">
   <div class="container">
+
     <div id="content">
-      <h1>A brief introduction to my place..</h1>
-      <h2>Urtegata 24      </h2>
+      <h1>A brief introduction to my apartment</h1>
       <img src="http://imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg" alt="Birdie" style=%"width:304px;height:228px;">
 
-      <h2>Table of Content</h2>
+      <div id="toc">
+        <h3>Table of Contents</h3>
+      </div>
 
-      <h2>Directions</h2>
-      <p>If you’re good with Google Maps and don’t like following guides, skip to the “getting in to my apartment” part of this tutorial and use this as your basis: Urtegata 24 a 0187 Oslo, 2nd floor, door marked with “Vegard Wright”. </p>
-      <h2>From the airport</h2>
-      <p>Follow directions to get to the trains, just head to the right as soon as you exit luggage drop offs. Here you got two options: Flytoget or the regular trains. Regular trains are ~half as cheap and 2 minutes slower, so I’d advice you to take these. Buy a ticket on the machine which saves you 20 kr and purchase one ticket to Oslo Central Station. </p>
-      <h2>From Oslo Central station</h2>
-      <p>Your train ticket will work as a transfer ticket to the subway, so take the subway (t-bane). Head downstairs, follow the signs that’ll take you there, and head to the eastbounded direction (ØST). You’re only going one stop, so if the next stop isn’t Grønland, you’re going the wrong direction and needs to go two stations back, no worries.</p>
-      <h2>From Grønland t-bane station (subway)</h2>
-      <p>Walk up the stairs and turn to the right, make sure you’re walking the path that has the longest corridor through all the different shops inside the subway station.</p>
-      <h3>If you are picking up keys</h3>
-      <p>You’re going to this corner store located at this address: Tøyengata 2, 0190 Oslo. When exiting up the stairs walk straight through the square / market covered with various benches and trees till you see this</p>
-      <p>Head into that street you see there marked with yellow and walk 1 block down the street called “Tøyenbekken” and then head to the right along “Nordbygata”. At the end of that street you’ll see this store:</p>
-      <p>Go inside, tell them there’s an envelope with *your name* on it and they’ll hand you the envelope. Leave the store, go back the same path came from till you find this area which the arrow points. Head into that street.
-      </p>
-      <p>Cross the square through this path
-      </p>
-      <p> and the building should be in front of you with a steel gate.
-      </p>
-      <h3>Straight to my place</h3>
-      <p>Walk up the stairs, take a left turn and look between Kiwi and a restaurant called “Punjab Tandoori”. You want to cross the streets between these two buildings and keep walking along the street called Motzfeldts gate around 3 blocks till you find a large Mosque (which you’ll walk past) and a crossing street called “Urtegata”. This is my street. Take a right turn up on the pavement where cars are not allowed and walk till you find a steel gate. </p>
-      <h2>Getting into my house</h2>
-      <p>You should find a scanner on the right hand side of the entrance. Use the little black piece on the keys on the scanner ‘till you hear a buzzing sound, push the gate open. Head to the left when you enter the backyeard, and use the token to scan the little piece once again. On the second floor you’ll find my entrance right next to the elevator after taking a left turn when reaching the second floor.
-        When turning the key, try to hold it a little bit downward in case you’re struggling to open it.</p>
-      <h2>Wifi name: <strong>Politiets sikkerhetstjeneste Pasword: Jungelboken (add button for this function later lol)</strong></h2>
-      <h2>Safety</h2>
-      <p>The Fire extinguisher is located in the closet right next to the entrance *insert pic*. The building also has a centralized fire alarm which never really triggers unless something severe happens, so it probably won’t. It’s important that you use the fan</p>
-      <h2>The mediacenter</h2>
-      <p>To do</p>
+      <script type="text/javascript">
+        window.onload = function () {
+          var toc = "";
+          var level = 0;
 
+          document.getElementById("contents").innerHTML =
+              document.getElementById("contents").innerHTML.replace(
+                  /<h([\d])>([^<]+)<\/h([\d])>/gi,
+                  function (str, openLevel, titleText, closeLevel) {
+                    if (openLevel != closeLevel) {
+                      return str;
+                    }
+
+                    if (openLevel > level) {
+                      toc += (new Array(openLevel - level + 1)).join("<ul>");
+                    } else if (openLevel < level) {
+                      toc += (new Array(level - openLevel + 1)).join("</ul>");
+                    }
+
+                    level = parseInt(openLevel);
+
+                    var anchor = titleText.replace(/ /g, "_");
+                    toc += "<li><a href=\"#" + anchor + "\">" + titleText
+                        + "</a></li>";
+
+                    return "<h" + openLevel + "><a name=\"" + anchor + "\">"
+                        + titleText + "</a></h" + closeLevel + ">";
+                  }
+              );
+
+          if (level) {
+            toc += (new Array(level + 1)).join("</ul>");
+          }
+
+          document.getElementById("toc").innerHTML += toc;
+        };
+      </script>
+
+      <div id="contents">
+        <h2>Directions</h2>
+        <p>If you’re good with Google Maps and don’t like following guides, skip to the “getting in to my apartment” part of this tutorial and use this as your basis: Urtegata 24 a 0187 Oslo, 2nd floor, door marked with “Vegard Wright”. </p>
+        <h2>From the airport</h2>
+        <p>Follow directions to get to the trains, just head to the right as soon as you exit luggage drop offs. Here you got two options: Flytoget or the regular trains. Regular trains are ~half as cheap and 2 minutes slower, so I’d advice you to take these. Buy a ticket on the machine which saves you 20 kr and purchase one ticket to Oslo Central Station. </p>
+        <h2>From Oslo Central station</h2>
+        <p>Your train ticket will work as a transfer ticket to the subway, so take the subway (t-bane). Head downstairs, follow the signs that’ll take you there, and head to the eastbounded direction (ØST). You’re only going one stop, so if the next stop isn’t Grønland, you’re going the wrong direction and needs to go two stations back, no worries.</p>
+        <h2>From Grønland t-bane station (subway)</h2>
+        <p>Walk up the stairs and turn to the right, make sure you’re walking the path that has the longest corridor through all the different shops inside the subway station.</p>
+        <h3>If you are picking up keys</h3>
+        <p>You’re going to this corner store located at this address: Tøyengata 2, 0190 Oslo. When exiting up the stairs walk straight through the square / market covered with various benches and trees till you see this</p>
+        <p>Head into that street you see there marked with yellow and walk 1 block down the street called “Tøyenbekken” and then head to the right along “Nordbygata”. At the end of that street you’ll see this store:</p>
+        <p>Go inside, tell them there’s an envelope with *your name* on it and they’ll hand you the envelope. Leave the store, go back the same path came from till you find this area which the arrow points. Head into that street.
+        </p>
+        <p>Cross the square through this path
+        </p>
+        <p> and the building should be in front of you with a steel gate.
+        </p>
+        <h3>Straight to my place</h3>
+        <p>Walk up the stairs, take a left turn and look between Kiwi and a restaurant called “Punjab Tandoori”. You want to cross the streets between these two buildings and keep walking along the street called Motzfeldts gate around 3 blocks till you find a large Mosque (which you’ll walk past) and a crossing street called “Urtegata”. This is my street. Take a right turn up on the pavement where cars are not allowed and walk till you find a steel gate. </p>
+        <h2>Getting into my house</h2>
+        <p>You should find a scanner on the right hand side of the entrance. Use the little black piece on the keys on the scanner ‘till you hear a buzzing sound, push the gate open. Head to the left when you enter the backyeard, and use the token to scan the little piece once again. On the second floor you’ll find my entrance right next to the elevator after taking a left turn when reaching the second floor.
+          When turning the key, try to hold it a little bit downward in case you’re struggling to open it.</p>
+        <h2>Wifi name: <strong>Politiets sikkerhetstjeneste Pasword: Jungelboken (add button for this function later lol)</strong></h2>
+        <h2>Safety</h2>
+        <p>The Fire extinguisher is located in the closet right next to the entrance *insert pic*. The building also has a centralized fire alarm which never really triggers unless something severe happens, so it probably won’t. It’s important that you use the fan</p>
+        <h2>The mediacenter</h2>
+        <p>To do</p>
+      </div>
     </div>
   </div>
 </div>
