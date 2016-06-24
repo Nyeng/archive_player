@@ -28,6 +28,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 .container {
   margin: 0px; padding: 0px; border: 0px;
   width: 100%;
@@ -40,6 +44,7 @@ div#content {
   background-color: #fff;
   border-right: 2px red;
   padding-left: 2%;
+  padding-right:2%;
 }
 
 /* Main */
