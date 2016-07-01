@@ -8,6 +8,3 @@ in console:
 
 to start app: 
  rails server
-
-1. gem install bundle
-2. bundle install
