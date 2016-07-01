@@ -1,5 +1,4 @@
 # archive_player
-To install:
 Install ruby 2.1
 
 in console:
