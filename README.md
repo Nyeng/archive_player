@@ -10,3 +10,6 @@ in console:
 to start app: 
 rails server
 
+yup
+
+
